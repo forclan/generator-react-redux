@@ -40,8 +40,8 @@ var React = generators.Base.extend({
   },
   
   installReact: function() {
-    this.npmInstall([], {'saveDev': true});
-    this.npmInstall([], {'save': true});
+    this.npmInstall(devInstalls, {'saveDev': true});
+    this.npmInstall(saveInstalls, {'save': true});
   },
   
   paths: function () {
