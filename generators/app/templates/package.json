@@ -1,21 +1,16 @@
 {
-  "name": "generator-react-redux",
+  "name": "",
   "version": "0.1.0",
   "description": "",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "files": [
-    "generators/app/index.js"
-  ],
   "keywords": [
-    "yeoman-generator"
   ],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "yeoman-generator": "^0.23.3"
   },
   "devDependencies": {
   }

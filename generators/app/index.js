@@ -24,20 +24,28 @@ var saveInstalls = [
   'webpack-dev-server',
 ];
 var React = generators.Base.extend({
-  
-  installReact: function() {
-    this.npmInstall(devInstalls, {'saveDev': true});
-    this.npmInstall(saveInstalls, {'save': true});
-  },
-  writing: function() {
+    writing: function() {
     this.fs.copyTpl(
-      this.templatePath(basePath + 'index.html'),
-      this.destinationPath(basePath + 'index.html')
+      this.templatePath('index.html'),
+      this.destinationPath('index.html')
     );
     this.fs.copyTpl(
       this.templatePath('webpack.config.js'),
       this.destinationPath('webpack.config.js')
     );
+    this.fs.copyTpl(
+      this.templatePath('package.json'),
+      this.destinationPath('package.json')
+    )
+  },
+  
+  installReact: function() {
+    this.npmInstall([], {'saveDev': true});
+    this.npmInstall([], {'save': true});
+  },
+  
+  paths: function () {
+    this.fs.write('src/App.js', '');
   }
 });
 module.exports = React;
